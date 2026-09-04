@@ -1,0 +1,21 @@
+- Age column needs to be numerical.
+- Ratings should be converted to float.
+- Date and time columns should be datetime.
+- Vehicle condition is categorical but integer-encoded.
+- Multiple deliveries should be an integer column.
+- Target column (Time_taken) needs to be numerical.
+- There are no duplicate rows in the data.
+- The ID column is unique for all rows and can be dropped.
+- Missing values are stored as strings (`'NaN '`) with an extra space.
+- About 9% (8,515 rows) of data have these string NaN values (e.g., 616 missing in weather).
+- Missingness in delivery person columns is correlated (implies missing rider data).
+- Time ordered missingness is also tied to rider data (possible network logging error).
+- Weather and road traffic density missingness are highly correlated.
+- There are 1,320 unique riders.
+- Some riders have an age of 15 (minors), which is suspicious.
+- Minors' data has 1-star ratings, bad vehicle conditions, no weather/traffic data, and negative lat/long.
+- Minors' data is better removed than fixed.
+- Found rating values of 6, which is an error since max rating is 5 (better to drop these).
+- 4,071 rows have messy lat/long coordinates.
+- Negative lat/long values can be fixed by taking the absolute value.
+- 3,640 rows have messy lat/long values less than 1 (assign null and impute later).
