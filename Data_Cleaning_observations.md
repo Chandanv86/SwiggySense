@@ -9,11 +9,11 @@
 - Missing values are stored as strings (`'NaN '`) with an extra space.
 - About 9% (8,515 rows) of data have these string NaN values (e.g., 616 missing in weather).
 - Missingness in delivery person columns is correlated (implies missing rider data).
-- Time ordered missingness is also tied to rider data (possible network logging error).
+- Time ordered missingness is also tied to rider data (when rider data is missing then all the related files are unreliable).
 - Weather and road traffic density missingness are highly correlated.
 - There are 1,320 unique riders.
 - Some riders have an age of 15 (minors), which is suspicious.
-- Minors' data has 1-star ratings, bad vehicle conditions, no weather/traffic data, and negative lat/long.
+- Minors' data has 1-star ratings, bad vehicle conditions, no weather/traffic data, and negative lat/long.(that was the issue all along!)
 - Minors' data is better removed than fixed.
 - Found rating values of 6, which is an error since max rating is 5 (better to drop these).
 - 4,071 rows have messy lat/long coordinates.
